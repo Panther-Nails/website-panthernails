@@ -6,7 +6,35 @@ import { Link as LinkScroll } from "react-scroll";
 import ButtonOutline from "../misc/ButtonOutline.";
 import LogoVPN from "../../public/assets/Logo.svg";
 
-const Header = () => {
+const Header = ({
+  listMenus = [
+    {
+      name: "About",
+      to: "about",
+      activeLink: "about",
+      displayText: "About"
+    },
+    {
+      name: "Feature",
+      to: "feature",
+      activeLink: "feature",
+      displayText: "Feature"
+    },
+    {
+      name: "Pricing",
+      to: "pricing",
+      activeLink: "pricing",
+      displayText: "Pricing"
+    },
+    {
+      name: "Testimonial",
+      to: "testimoni",
+      activeLink: "testimoni",
+      displayText: "Testimonial"
+    }
+    
+  ],
+}) => {
   const [activeLink, setActiveLink] = useState(null);
   const [scrollActive, setScrollActive] = useState(false);
   useEffect(() => {
@@ -27,78 +55,24 @@ const Header = () => {
             <Image src="/assets/logo.png" width={200} height={30} />
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
+          {listMenus.map((listMenu, index) => (
             <LinkScroll
+              key={index}
               activeClass="active"
-              to="about"
+              to={listMenu.to}
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink(`{listMenu.activeLink}`);
               }}
               className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "about"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 a")
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" 
               }
             >
-              About Us
+              {listMenu.displayText}
             </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("feature");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Feature
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("pricing");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "pricing"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Pricing
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="testimoni"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("testimoni");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "testimoni"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Testimonial
-            </LinkScroll>
+             ))}
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
          

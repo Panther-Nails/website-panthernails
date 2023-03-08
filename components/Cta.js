@@ -7,28 +7,9 @@ import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import Products from "./Products";
 
 const Cta = ({
-  listUser = [
-    {
-        name: "Customers",
-        number: "35",
-        icon: "/assets/Icon/heroicons_sm-user.svg"
-    },
-    {
-        name: "Locations",
-        number: "4",
-        icon: "/assets/Icon/gridicons_location.svg"
-    },
-    {
-        name: "End Consumers",
-        number: "1000000",
-        icon: "/assets/Icon/heroicons_sm-user.svg"
-    },
-    {
-        name: "Employees",
-        number: "50",
-        icon: "/assets/Icon/heroicons_sm-user.svg"
-    },
-  ],
+  heading = "",
+  description = "",
+  redirectUrl = ""
 }) => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 

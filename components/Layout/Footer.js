@@ -13,6 +13,9 @@ const Footer = () => {
           <p className="py-2">
             <Image src="/assets/logo.png" width={200} height={30} className="py-1" />
           </p>
+          <p>
+            <Image src="/assets/Logo_light.png" width={200} height={70} className="py-1" />
+          </p>
           <p className="mb-4">
             <strong className="font-medium">Panther Nails</strong> A business automation technology company devoted to create, modify, enhance, and protect client’s business by providing astute solutions.
           </p>
@@ -27,7 +30,7 @@ const Footer = () => {
               <Link href="https://www.instagram.com/pnbs_india/"><Instagram className="h-6 w-6" /></Link>
             </div>
           </div>
-          <p className="text-gray-400">©{new Date().getFullYear()} - LaslesVPN</p>
+          <p className="text-gray-400">©{new Date().getFullYear()} - Panther Nails Technologies Pvt Ltd</p>
         </div>
         <div className=" row-span-2 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">
           <p className="text-black-600 mb-4 font-medium text-lg">Product</p>

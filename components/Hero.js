@@ -23,7 +23,7 @@ const Hero = () => {
               Astute Solutions for Your <strong>Business!</strong>.
               </h1>
               <p className="text-black-500 mt-4 mb-6">
-                rupesh telang
+              a genial technology company delivering insightful enterprise software that foster your business.
               </p>
               <ButtonPrimary>Get Started</ButtonPrimary>
             </div>

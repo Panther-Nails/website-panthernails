@@ -43,8 +43,6 @@ export default function Home() {
       <SeoHead title='Loyalty Landing Page' />
       <Header listMenus={listMenus}/>
         <Hero />
-        <Industries />
-         <Feature />
         <Stats />
         <Cta />
         <Footer />
